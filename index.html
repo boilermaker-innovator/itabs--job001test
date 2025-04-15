@@ -1,0 +1,197 @@
+<!-- LinkedIn iTabs Template - Co-Founder Search -->
+<!-- COPY AND PASTE THIS ENTIRE BLOCK INTO A LINKEDIN ARTICLE -->
+
+<!-- Featured image suggestion for the LinkedIn article: 
+     Add a professional image showing collaboration/startup environment -->
+
+<!-- Main container with LinkedIn-optimized styling -->
+<div style="font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; max-width: 650px; margin: 25px auto; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+  
+  <!-- Header section with eye-catching background -->
+  <div style="background: linear-gradient(135deg, #4338ca 0%, #6366f1 100%); color: white; padding: 25px; position: relative;">
+    <div style="position: relative; z-index: 2;">
+      <h2 style="margin: 0 0 8px 0; font-size: 26px; font-weight: 600;">Looking for a Technical Co-Founder</h2>
+      <p style="margin: 0; font-size: 17px; opacity: 0.9;">iTabs Project - Innovative Digital Content Platform</p>
+    </div>
+    
+    <!-- 👍i button positioned in the corner -->
+    <div style="position: absolute; top: 15px; right: 15px; width: 44px; height: 44px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 26px; box-shadow: 0 3px 8px rgba(0,0,0,0.25); cursor: pointer; z-index: 5;" onclick="toggleTabs()">
+      👍
+      <div style="position: absolute; bottom: -2px; right: -2px; width: 20px; height: 20px; background: #4338ca; border-radius: 50%; color: white; font-size: 13px; font-weight: bold; font-style: italic; display: flex; align-items: center; justify-content: center;">i</div>
+    </div>
+  </div>
+  
+  <!-- Tabs navigation and content - hidden initially -->
+  <div id="itabs-container" style="display: none;">
+    <div style="display: flex; background-color: #f5f7fa; border-bottom: 1px solid #e0e0e0;">
+      <button class="itab active" onclick="switchTab(event, 'vision')" 
+              style="padding: 14px 16px; background: white; border: none; border-bottom: 2px solid #4338ca; color: #4338ca; font-weight: 500; cursor: pointer; flex-grow: 1;">
+        Vision
+      </button>
+      <button class="itab" onclick="switchTab(event, 'opportunity')" 
+              style="padding: 14px 16px; background: #f5f7fa; border: none; border-bottom: 2px solid transparent; color: #666; font-weight: 500; cursor: pointer; flex-grow: 1;">
+        Opportunity
+      </button>
+      <button class="itab" onclick="switchTab(event, 'ideal-partner')" 
+              style="padding: 14px 16px; background: #f5f7fa; border: none; border-bottom: 2px solid transparent; color: #666; font-weight: 500; cursor: pointer; flex-grow: 1;">
+        Ideal Partner
+      </button>
+      <button class="itab" onclick="switchTab(event, 'next-steps')" 
+              style="padding: 14px 16px; background: #f5f7fa; border: none; border-bottom: 2px solid transparent; color: #666; font-weight: 500; cursor: pointer; flex-grow: 1;">
+        Next Steps
+      </button>
+    </div>
+    
+    <!-- Tab contents -->
+    <div>
+      <!-- Vision tab -->
+      <div id="vision-tab" class="tab-content" style="display: block; padding: 22px; background: white; line-height: 1.6;">
+        <p style="margin-bottom: 16px;">iTabs is reinventing how information is displayed and shared online. Our platform transforms standard web content into interactive, tabbed experiences that engage users and drive higher conversion rates.</p>
+        
+        <p style="margin-bottom: 16px;">The core technology - a custom "👍i" interactive element - makes information more accessible while maintaining context. We've developed working prototypes for several use cases:</p>
+        
+        <ul style="margin-bottom: 16px; padding-left: 22px;">
+          <li style="margin-bottom: 10px;"><strong>Job Listings:</strong> Structured, interactive job postings that increase application rates</li>
+          <li style="margin-bottom: 10px;"><strong>Product Information:</strong> Engaging product details that boost sales conversions</li>
+          <li style="margin-bottom: 10px;"><strong>Charity Campaigns:</strong> Donation interfaces that showcase impact and increase giving</li>
+        </ul>
+        
+        <p>Our vision is to become the standard for interactive information display across social media platforms and websites.</p>
+      </div>
+      
+      <!-- Opportunity tab -->
+      <div id="opportunity-tab" class="tab-content" style="display: none; padding: 22px; background: white; line-height: 1.6;">
+        <p style="margin-bottom: 16px;">We're at an exciting inflection point with multiple options for monetization and growth:</p>
+        
+        <ul style="margin-bottom: 16px; padding-left: 22px;">
+          <li style="margin-bottom: 10px;"><strong>WordPress Plugin:</strong> B2B SaaS model with freemium and premium tiers</li>
+          <li style="margin-bottom: 10px;"><strong>API Access:</strong> For developers integrating into existing platforms</li>
+          <li style="margin-bottom: 10px;"><strong>Enterprise Solutions:</strong> Custom implementations for large organizations</li>
+          <li style="margin-bottom: 10px;"><strong>Affiliate Revenue:</strong> Commission from sales/conversions through our platform</li>
+        </ul>
+        
+        <p style="margin-bottom: 16px;">We've validated the concept with initial user testing and received strong positive feedback across multiple verticals. The next step is building a scalable MVP and implementing our go-to-market strategy.</p>
+        
+        <p>This is an opportunity to build a profitable business solving a real problem with a solution that users genuinely appreciate.</p>
+      </div>
+      
+      <!-- Ideal Partner tab -->
+      <div id="ideal-partner-tab" class="tab-content" style="display: none; padding: 22px; background: white; line-height: 1.6;">
+        <p style="margin-bottom: 16px;">I'm looking for a technical co-founder who can help transform this vision into reality. The ideal partner would have:</p>
+        
+        <ul style="margin-bottom: 16px; padding-left: 22px;">
+          <li style="margin-bottom: 10px;"><strong>Technical Skills:</strong> Strong front-end development experience (JavaScript/React), familiarity with WordPress development, and a solid understanding of APIs</li>
+          <li style="margin-bottom: 10px;"><strong>Product Mindset:</strong> Ability to translate user needs into elegant technical solutions</li>
+          <li style="margin-bottom: 10px;"><strong>Startup Experience:</strong> Comfortable with the ambiguity and pace of early-stage companies</li>
+          <li style="margin-bottom: 10px;"><strong>Entrepreneurial Drive:</strong> Passionate about building something impactful from scratch</li>
+        </ul>
+        
+        <p>Most importantly, I'm looking for someone who shares the vision of creating more engaging, interactive content experiences that solve real problems for businesses and users alike.</p>
+      </div>
+      
+      <!-- Next Steps tab -->
+      <div id="next-steps-tab" class="tab-content" style="display: none; padding: 22px; background: white; line-height: 1.6;">
+        <p style="margin-bottom: 16px;">If you're interested in exploring this opportunity, here's how we can proceed:</p>
+        
+        <ol style="margin-bottom: 16px; padding-left: 22px;">
+          <li style="margin-bottom: 12px;"><strong>Initial Conversation:</strong> Let's connect for a 30-minute call to discuss the vision and assess mutual fit</li>
+          <li style="margin-bottom: 12px;"><strong>Technical Deep Dive:</strong> Review existing prototypes and discuss technical architecture</li>
+          <li style="margin-bottom: 12px;"><strong>MVP Planning:</strong> Define scope and roadmap for an initial release</li>
+          <li style="margin-bottom: 12px;"><strong>Partnership Terms:</strong> Discuss equity split, roles, responsibilities, and commitments</li>
+        </ol>
+        
+        <p>I'm located in Perth, Western Australia, but open to remote collaboration with the right partner. The most important factors are shared vision, complementary skills, and commitment to building something great.</p>
+      </div>
+    </div>
+    
+    <!-- Call to action button -->
+    <div style="padding: 20px; text-align: center; border-top: 1px solid #f5f7fa; background-color: white;">
+      <a href="https://www.linkedin.com/in/YOUR-PROFILE/" 
+         style="display: inline-block; padding: 12px 28px; background-color: #4338ca; color: white; text-decoration: none; font-weight: 600; border-radius: 24px; transition: background-color 0.3s; font-size: 16px;">
+        Connect to Discuss
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Auto-rotating tabs functionality -->
+<script>
+  // Variables for tab functionality
+  let currentTab = 0;
+  let tabsVisible = false;
+  let autoRotationTimer;
+  const tabIds = ['vision', 'opportunity', 'ideal-partner', 'next-steps'];
+  
+  // Function to toggle tab visibility
+  function toggleTabs() {
+    const tabsContainer = document.getElementById('itabs-container');
+    tabsVisible = !tabsVisible;
+    
+    if (tabsVisible) {
+      tabsContainer.style.display = 'block';
+      startAutoRotation();
+    } else {
+      tabsContainer.style.display = 'none';
+      stopAutoRotation();
+    }
+  }
+  
+  // Function to switch tabs
+  function switchTab(event, tabId) {
+    // Hide all tab contents
+    const tabContents = document.getElementsByClassName('tab-content');
+    for (let i = 0; i < tabContents.length; i++) {
+      tabContents[i].style.display = 'none';
+    }
+    
+    // Remove active class from all tabs
+    const tabs = document.getElementsByClassName('itab');
+    for (let i = 0; i < tabs.length; i++) {
+      tabs[i].style.background = '#f5f7fa';
+      tabs[i].style.color = '#666';
+      tabs[i].style.borderBottom = '2px solid transparent';
+    }
+    
+    // Show the selected tab content
+    document.getElementById(tabId + '-tab').style.display = 'block';
+    
+    // Add active class to the clicked tab
+    if (event) {
+      event.currentTarget.style.background = 'white';
+      event.currentTarget.style.color = '#4338ca';
+      event.currentTarget.style.borderBottom = '2px solid #4338ca';
+      
+      // Stop auto rotation when user manually clicks a tab
+      stopAutoRotation();
+    } else {
+      // If called programmatically (for auto-rotation), find and style the correct tab
+      const tabs = document.getElementsByClassName('itab');
+      for (let i = 0; i < tabs.length; i++) {
+        if (tabs[i].getAttribute('onclick').includes(tabId)) {
+          tabs[i].style.background = 'white';
+          tabs[i].style.color = '#4338ca';
+          tabs[i].style.borderBottom = '2px solid #4338ca';
+        }
+      }
+    }
+  }
+  
+  // Auto rotation functionality
+  function startAutoRotation() {
+    // Reset any existing timer
+    stopAutoRotation();
+    
+    // Start a new timer
+    autoRotationTimer = setInterval(function() {
+      currentTab = (currentTab + 1) % tabIds.length;
+      switchTab(null, tabIds[currentTab]);
+    }, 4000); // Rotate every 4 seconds
+  }
+  
+  function stopAutoRotation() {
+    if (autoRotationTimer) {
+      clearInterval(autoRotationTimer);
+      autoRotationTimer = null;
+    }
+  }
+</script>
