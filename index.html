@@ -3,7 +3,378 @@
 
 <!-- Featured image suggestion for the LinkedIn article: 
      Add a professional image showing collaboration/startup environment -->
+<!-- Floating iTabs 👍i Button - Add to your website -->
 
+<!-- CSS Styles -->
+<style>
+  /* Floating button container */
+  .itabs-floating-container {
+    position: fixed;
+    right: 30px;
+    bottom: 100px;
+    z-index: 9999;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+  }
+  
+  /* Main floating button */
+  .itabs-floating-button {
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease;
+  }
+  
+  .itabs-floating-button:hover {
+    transform: scale(1.05);
+  }
+  
+  /* "i" indicator */
+  .itabs-i-indicator {
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    width: 22px;
+    height: 22px;
+    background-color: #4338ca;
+    border-radius: 50%;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Tabs panel - hidden by default */
+  .itabs-panel {
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    width: 350px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Show tabs panel when active */
+  .itabs-panel.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: all;
+  }
+  
+  /* Tabs navigation */
+  .itabs-tabs-nav {
+    display: flex;
+    background-color: #f5f7fa;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .itabs-tab {
+    padding: 12px 14px;
+    background: #f5f7fa;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: #666;
+    font-weight: 500;
+    cursor: pointer;
+    flex-grow: 1;
+    text-align: center;
+    font-size: 14px;
+    transition: all 0.2s ease;
+  }
+  
+  .itabs-tab.active {
+    background: white;
+    color: #4338ca;
+    border-bottom: 2px solid #4338ca;
+  }
+  
+  /* Tab content */
+  .itabs-tab-content {
+    display: none;
+    padding: 20px;
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  
+  .itabs-tab-content.active {
+    display: block;
+  }
+  
+  /* Styling for content within tabs */
+  .itabs-tab-content h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .itabs-tab-content p {
+    margin-bottom: 15px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #555;
+  }
+  
+  .itabs-tab-content ul {
+    margin-bottom: 15px;
+    padding-left: 20px;
+  }
+  
+  .itabs-tab-content li {
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+  
+  .itabs-tab-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 15px;
+  }
+  
+  /* Call to action button */
+  .itabs-cta {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    margin-top: 15px;
+    background-color: #4338ca;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .itabs-cta:hover {
+    background-color: #3729a7;
+  }
+  
+  /* Close button */
+  .itabs-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #777;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+  }
+  
+  .itabs-close:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Animation for tab switching */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .itabs-tab-content.active {
+    animation: fadeIn 0.3s ease forwards;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .itabs-panel {
+      width: 300px;
+      right: -35px;
+    }
+    
+    .itabs-floating-container {
+      right: 20px;
+      bottom: 80px;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .itabs-panel {
+      width: 280px;
+    }
+    
+    .itabs-tab {
+      padding: 10px 8px;
+      font-size: 13px;
+    }
+  }
+</style>
+
+<!-- HTML Structure -->
+<div class="itabs-floating-container">
+  <!-- Main floating button -->
+  <div class="itabs-floating-button" id="itabsFloatingButton">
+    👍
+    <div class="itabs-i-indicator">i</div>
+  </div>
+  
+  <!-- Tabs panel -->
+  <div class="itabs-panel" id="itabsPanel">
+    <div class="itabs-tabs-nav">
+      <button class="itabs-tab active" data-tab="about">About</button>
+      <button class="itabs-tab" data-tab="features">Features</button>
+      <button class="itabs-tab" data-tab="use-cases">Use Cases</button>
+      <button class="itabs-tab" data-tab="contact">Contact</button>
+    </div>
+    
+    <!-- About tab -->
+    <div class="itabs-tab-content active" data-tab="about">
+      <h3>Welcome to iTabs.co</h3>
+      <p>iTabs transforms how information is displayed and shared online. Our revolutionary platform takes static content and makes it interactive, engaging, and more effective.</p>
+      <p>With the distinctive 👍i button, websites can organize complex information into digestible, tabbed sections that improve user experience and boost conversion rates.</p>
+      <a href="https://itabs.co" class="itabs-cta">Visit iTabs.co</a>
+    </div>
+    
+    <!-- Features tab -->
+    <div class="itabs-tab-content" data-tab="features">
+      <h3>Key Features</h3>
+      <ul>
+        <li><strong>Interactive Content:</strong> Transform static information into engaging, tabbed experiences</li>
+        <li><strong>Distinctive 👍i Button:</strong> Recognizable interface element that draws user attention</li>
+        <li><strong>Higher Engagement:</strong> Increase time-on-page by up to 40% with interactive content</li>
+        <li><strong>Better Conversions:</strong> Early tests show 25% higher conversion rates</li>
+        <li><strong>Mobile Optimized:</strong> Perfect for information display on smaller screens</li>
+        <li><strong>Easy Implementation:</strong> Simple to add to websites, social media, and marketing materials</li>
+      </ul>
+      <a href="https://itabs.co/features" class="itabs-cta">Explore All Features</a>
+    </div>
+    
+    <!-- Use Cases tab -->
+    <div class="itabs-tab-content" data-tab="use-cases">
+      <h3>iTabs Use Cases</h3>
+      <ul>
+        <li><strong>Job Postings:</strong> Present job details in organized, digestible sections</li>
+        <li><strong>Product Information:</strong> Showcase features, specifications, and reviews in tabs</li>
+        <li><strong>Charity Fundraising:</strong> Tell your story and show impact through interactive content</li>
+        <li><strong>Educational Content:</strong> Organize learning materials into structured sections</li>
+        <li><strong>Service Descriptions:</strong> Present different service options clearly and concisely</li>
+      </ul>
+      <p>iTabs works across industries and use cases, anywhere information needs to be presented clearly and effectively.</p>
+      <a href="https://itabs.co/examples" class="itabs-cta">See Real Examples</a>
+    </div>
+    
+    <!-- Contact tab -->
+    <div class="itabs-tab-content" data-tab="contact">
+      <h3>Get in Touch</h3>
+      <p>Want to learn more about iTabs or discuss how it could benefit your business?</p>
+      <p>We're currently looking for:</p>
+      <ul>
+        <li>Technical & Business Co-Founders</li>
+        <li>Early Adopters & Beta Testers</li>
+        <li>Strategic Partners</li>
+      </ul>
+      <a href="https://itabs.co/contact" class="itabs-cta">Contact Us</a>
+      <p style="margin-top: 15px; font-size: 13px;">Or email us at: <a href="mailto:info@itabs.co">info@itabs.co</a></p>
+    </div>
+    
+    <div class="itabs-close" id="itabsClose">✕</div>
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+  // Get element references
+  const floatingButton = document.getElementById('itabsFloatingButton');
+  const tabsPanel = document.getElementById('itabsPanel');
+  const closeButton = document.getElementById('itabsClose');
+  const tabs = document.querySelectorAll('.itabs-tab');
+  const tabContents = document.querySelectorAll('.itabs-tab-content');
+  
+  // Tab rotation variables
+  let currentTabIndex = 0;
+  let tabRotationTimer;
+  const tabIds = ['about', 'features', 'use-cases', 'contact'];
+  
+  // Toggle panel visibility
+  floatingButton.addEventListener('click', function() {
+    tabsPanel.classList.toggle('active');
+    if (tabsPanel.classList.contains('active')) {
+      startTabRotation();
+    } else {
+      stopTabRotation();
+    }
+  });
+  
+  // Close panel
+  closeButton.addEventListener('click', function() {
+    tabsPanel.classList.remove('active');
+    stopTabRotation();
+  });
+  
+  // Tab switching
+  tabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+      const tabId = this.getAttribute('data-tab');
+      switchTab(tabId);
+      stopTabRotation(); // Stop rotation when user manually clicks a tab
+    });
+  });
+  
+  // Switch tab function
+  function switchTab(tabId) {
+    // Deactivate all tabs and contents
+    tabs.forEach(tab => tab.classList.remove('active'));
+    tabContents.forEach(content => content.classList.remove('active'));
+    
+    // Activate selected tab and content
+    document.querySelector(`.itabs-tab[data-tab="${tabId}"]`).classList.add('active');
+    document.querySelector(`.itabs-tab-content[data-tab="${tabId}"]`).classList.add('active');
+  }
+  
+  // Auto rotation functionality
+  function startTabRotation() {
+    // Reset any existing timer
+    stopTabRotation();
+    
+    // Start a new timer
+    tabRotationTimer = setInterval(function() {
+      currentTabIndex = (currentTabIndex + 1) % tabIds.length;
+      switchTab(tabIds[currentTabIndex]);
+    }, 5000); // Rotate every 5 seconds
+  }
+  
+  function stopTabRotation() {
+    if (tabRotationTimer) {
+      clearInterval(tabRotationTimer);
+      tabRotationTimer = null;
+    }
+  }
+  
+  // Close panel when clicking outside of it
+  document.addEventListener('click', function(event) {
+    const isClickInsidePanel = tabsPanel.contains(event.target);
+    const isClickOnButton = floatingButton.contains(event.target);
+    
+    if (!isClickInsidePanel && !isClickOnButton && tabsPanel.classList.contains('active')) {
+      tabsPanel.classList.remove('active');
+      stopTabRotation();
+    }
+  });
+</script>
 <!-- Main container with LinkedIn-optimized styling -->
 <div style="font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; max-width: 650px; margin: 25px auto; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
   
